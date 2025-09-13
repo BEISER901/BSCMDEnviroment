@@ -5,17 +5,17 @@
 ## Установка
 ```
 # npm
-npm i BSCMDEnviroment
+npm i bscmdenviroment
 
 # yarn
-yarn BSCMDEnviroment
+yarn bscmdenviroment
 ```
 
 ## Использование
 #### ./Test.js
 ```nodejs
 #!/usr/bin/env -S node  --no-warnings
-const BSCMDEnviroment = require("BSCMDEnviroment").BSCMDEnviroment
+const BSCMDEnviroment = require("bscmdenviroment").BSCMDEnviroment
 
 const cmd = new BSCMDEnviroment();
 cmd.cmdRootPermissions = [cmd.perrmissionsKeys.default, cmd.perrmissionsKeys.script]
