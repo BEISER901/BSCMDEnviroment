@@ -1,0 +1,19 @@
+{
+  "name": "bscmdenviroment",
+  "version": "1.0.0",
+  "description": "\"BSCMDEnviroment\" - Командная среда, для работы с \"bscript\", предназначена для запуска скриптов написанных на \"bscript\" и отдельных команд, которая умеет интерпритировать ввод и вывод для разных сред таких например как терминал. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cmd",
+    "enviroment",
+    "nodejs"
+  ],
+  "author": "Bondar Nikita ( Beiser )",
+  "license": "ISC",
+  "dependencies": {
+    "bscriptrunner": "^1.0.0"
+  }
+}

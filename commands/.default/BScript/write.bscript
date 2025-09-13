@@ -1,0 +1,2 @@
+$(command_info)=eval '{ name: ["write"], description: "", syntax: "" }'
+$(execute)=eval 'await this.OnData(text); await this.waitForPerUpdate(); await delay(1000); await this.OnData("\u000D");'
