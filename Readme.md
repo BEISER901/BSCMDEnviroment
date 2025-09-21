@@ -11,8 +11,8 @@ npm i bscmdenviroment
 yarn bscmdenviroment
 ```
 
-## Использование
-#### ./Test.js
+## Запуск и инициализация среды в NodeJs
+### ./Test.js
 ```nodejs
 #!/usr/bin/env -S node  --no-warnings
 const BSCMDEnviroment = require("bscmdenviroment").BSCMDEnviroment
@@ -21,7 +21,17 @@ const cmd = new BSCMDEnviroment();
 cmd.cmdRootPermissions = [cmd.perrmissionsKeys.default, cmd.perrmissionsKeys.script]
 cmd.Start()
 ```
-#### ./script.bs
+## Запуск через ```npm run``` или ```yarn```
+```bash
+ $ npm run cmd
+
+# Или
+
+ $ yarn cmd
+```
+
+## Использование
+### ./script.bs
 ```bash
 $(test)={`Hello world!`}
 $(array)={
@@ -40,7 +50,7 @@ $(newFunc)=FUNC=>{
 print ${`exit`}
 ```
 
-#### Консоль
+### Консоль
 ```bash
  <help>? Test
  Command by name "Test" not found!
