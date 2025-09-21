@@ -4,7 +4,7 @@
   "description": "\"BSCMDEnviroment\" - Командная среда, для работы с \"bscript\", предназначена для запуска скриптов написанных на \"bscript\" и отдельных команд, которая умеет интерпритировать ввод и вывод для разных сред таких например как терминал. ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "node postinstall \"$INIT_CWD\""
   },
   "keywords": [
     "cmd",
