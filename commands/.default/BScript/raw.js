@@ -3,5 +3,7 @@ module.exports = {
 	description: '',
 	syntax: '',
 	perms: [999],
-	execute: (bsval) => bsval.val
+	execute(bsval) {
+		return new this.Type(bsval.val)
+	}
 }

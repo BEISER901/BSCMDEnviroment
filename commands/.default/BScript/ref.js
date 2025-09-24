@@ -36,9 +36,9 @@ module.exports = {
 	execute: function(bsarg, ...props){
 		let bsref = {}
 		if(bsarg?.type == "object" || bsarg?.type == "jstype") {
-			bsref = ({ type: "ref", prop: props.map(prop => prop.val.split(".")).flat(1), set: function(setVal){ assign(this, bsref.prop, setVal) }.bind(bsarg?.val??{}), get: function() { return deep_value(this, bsref.prop) }.bind(bsarg?.val??{}) })
+			bsref = new this.Type({ type: "ref", prop: props.map(prop => prop.val.split(".")).flat(1), set: function(setVal){ assign(this, bsref.prop, setVal) }.bind(bsarg?.val??{}), get: function() { return deep_value(this, bsref.prop) }.bind(bsarg?.val??{}) })
 		} else {
-			bsref = ({ type: "ref", prop: [bsarg, ...props].map(prop => prop.val.split(".")).flat(1), set: function(setVal){ assign(this, bsref.prop, setVal) }.bind(this), get: function() {return deep_value(this, bsref.prop) }.bind(this) })
+			bsref = new this.Type({ type: "ref", prop: [bsarg, ...props].map(prop => prop.val.split(".")).flat(1), set: function(setVal){ assign(this, bsref.prop, setVal) }.bind(this), get: function() {return deep_value(this, bsref.prop) }.bind(this) })
 		}
 		return bsref
 	}

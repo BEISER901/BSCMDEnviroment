@@ -3,7 +3,7 @@ module.exports = {
 	description: '',
 	syntax: '',
 	perms: [999],
-	async execute(val) {
-		return { type: "number", val: Number(val.val) }
+	execute(val) {
+		return new this.Type({ type: "number", val: Number(val.val) })
 	}
 }

@@ -46,7 +46,19 @@ module.exports = class TCC {
 			this.WriteCommand(cmd);
 			this.stdinVal = cmd;
 		}
-
+		function toUnicode(theString) {
+		  var unicodeString = '';
+		  for (var i=0; i < theString.length; i++) {
+		    var theUnicode = theString.charCodeAt(i).toString(16).toUpperCase();
+		    while (theUnicode.length < 4) {
+		      theUnicode = '0' + theUnicode;
+		    }
+		    theUnicode = '\\u' + theUnicode;
+		    unicodeString += theUnicode;
+		  }
+		  return unicodeString;
+		}
+		// console.log(toUnicode(inputStdin))
 		switch(inputStdin) {
 			case "\u0003":
 				process.stdout.write("\n");
@@ -58,6 +70,9 @@ module.exports = class TCC {
 				this.col = 0;
 				this.CMD._historyPos = -1;
 				return 1;
+			case "\u001B\u004F\u004D":
+				// console.log(123)
+				break;
 			case "\u001b[A":
 				if(this.CMD._historyPos != this.CMD.commandHistory.length-1) {					
 					this.CMD._historyPos += 1;

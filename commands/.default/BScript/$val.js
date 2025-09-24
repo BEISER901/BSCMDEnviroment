@@ -11,6 +11,6 @@ module.exports = {
 			return { type: "bool", val: this.getScope().$val[bsarg1.val] ? 1 : 0 }
 		}
 		bsarg0 = this.getScope().$val[bsarg0.val];
-		return bsarg0? !bsarg0.type && !bsarg0.val? { type: "RAW", val: bsarg0 } : bsarg0 : null;
+		return bsarg0? !bsarg0.type && !bsarg0.val? new this.Type(bsarg0) : bsarg0 : null;
 	}
 }

@@ -1,6 +1,7 @@
 const CMDPermissions = require('./SRC/CMDPermissions')
 const EventEmitter = require('node:events');
 const BScriptRunner = require('bscriptrunner').BScriptRunner;
+const BSType = require('bscriptrunner').Type;
 const { readDirRecursive, delay } = require('./SRC/utils/utils');
 const TCC = require('./TerminalCommandController');
 const fs = require('fs');
@@ -22,7 +23,7 @@ module.exports = class CMD extends EventEmitter{
 
 		this._perUpdateInterval = null;
 		this.perrmissionsKeys={...CMDPermissions, ...options.perrmissionsKeys??{}};
-		
+
 		this.commandsPaths=[__dirname + '/commands', ...options.commandsPaths??[]]
 		this.cmdRootPermissions = [...options.cmdRootPermissions??[]];
 		this.cmdPermissionsHistory = [[CMDPermissions.default, ...options.historyFirstPermissions??[]], ...options.cmdPermissionsHistory??[]];
